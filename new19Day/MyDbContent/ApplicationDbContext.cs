@@ -13,12 +13,13 @@ namespace new19Day.MyDbContent
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			base.OnConfiguring(optionsBuilder);
-			optionsBuilder.UseSqlServer("Data Source=Data Source=DESKTOP-RETJJ6I\\MSSQLS;Initial Catalog=MyDatabase;Integrated Security=True;Connect");
+			
+			optionsBuilder.UseSqlServer("Data Source=DESKTOP-RETJJ6I\\MSSQLS;Initial Catalog=My1Database;Integrated Security=True;TrustServerCertificate=True;");
 		}
 
 
-		ApplicationDbContext db = new ApplicationDbContext();
-		public DbSet<Employee> Employees { get; set; }
+		
+		public DbSet<Employee> Employee { get; set; }
+		public DbSet<Department> Department { get; set; }
 	}
 }
